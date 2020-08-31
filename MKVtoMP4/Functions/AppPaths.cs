@@ -30,5 +30,10 @@ namespace MKVtoMP4.Functions
         {
             return Path.Combine(MainWindow.MTP_PATH, path1, path2, path3);
         }
+
+        public static string GetFFmpeg(string path1 = "", string path2 = "", string path3 = "")
+        {
+            return Path.Combine(Get(MainWindow.MTP_PATH), "ffmpeg", path1, path2, path3);
+        }
     }
 }

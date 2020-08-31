@@ -6,7 +6,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         xmlns:local="clr-namespace:MKVtoMP4"
-        Title="MKVtoMP4" Width="454.195" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="566.711" Loaded="MetroWindow_Loaded">
+        Title="MKVtoMP4" Width="454.195" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="566.711">
 
     <Border Padding="10">
         <StackPanel>
@@ -18,7 +18,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <TextBox x:Name="sourceDirectory" IsReadOnly="True"/>
+                <TextBox x:Name="sourceDirectory" IsReadOnly="True" TextChanged="sourceDirectory_TextChanged"/>
                 <Button Grid.Column="1" Click="BrowseSource" Content="Browse.." Margin="10,0,0,0" />
 
             </Grid>
@@ -39,7 +39,7 @@
             <Grid>
                 <StackPanel>
                     <Label Content="Files found:" />
-                    <ListBox MinHeight="300" Margin="0,0,0,2" BorderThickness="0,1" />
+                    <ListBox x:Name="mediaList" MinHeight="300" Margin="0,0,0,2" BorderThickness="0,1" />
                 </StackPanel>
             </Grid>
 
