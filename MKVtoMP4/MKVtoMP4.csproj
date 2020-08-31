@@ -46,7 +46,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,6 +75,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -185,6 +186,7 @@
     <EmbeddedResource Include="EmbeddedAssemblies\WPFFolderBrowser.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EmbeddedAssemblies\Newtonsoft.Json.dll" />
     <Content Include="EmbeddedAssemblies\Xabe.FFmpeg.dll" />
     <None Include="Resources\ffprobe.exe" />
     <None Include="Resources\ffmpeg.exe" />

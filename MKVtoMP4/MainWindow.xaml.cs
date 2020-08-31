@@ -71,6 +71,21 @@ namespace MKVtoMP4
             }
         }
 
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            if (itemProgress.IsIndeterminate)
+            {
+                if (MessageBox.Show("MKVtoMP4 is currently doing work.. You sure you want to exit?", "Wait!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
         private static async Task RunConverter(string input)
         {
             //Queue filesToConvert = new Queue(GetFilesToConvert());
