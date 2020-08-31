@@ -1,18 +1,9 @@
 ﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Win32;
+using MKVtoMP4.Functions;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MKVtoMP4
 {
@@ -21,9 +12,32 @@ namespace MKVtoMP4
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        public static readonly string MTP_PATH = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+
         public MainWindow()
-        {
+        {           
             InitializeComponent();
+            AppPaths.CreateDirectories();
+        }
+
+        private void OpenGithub(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/1stian/MKVtoMP4");
+        }
+
+        private void BrowseSource(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void BrowseDesti(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow = this;
         }
     }
 }

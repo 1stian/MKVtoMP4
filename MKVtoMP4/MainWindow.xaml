@@ -3,41 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         xmlns:local="clr-namespace:MKVtoMP4"
-        Title="MKVtoMP4" Width="454.195" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="566.711">
-
-    <mah:MetroWindow.LeftWindowCommands>
-        <mah:WindowCommands>
-            <Button  ToolTip="Open up the GitHub site">
-                <iconPacks:PackIconModern Width="22"
-                                  Height="22"
-                                  Kind="SocialGithubOctocat" />
-            </Button>
-        </mah:WindowCommands>
-    </mah:MetroWindow.LeftWindowCommands>
-
-    <mah:MetroWindow.RightWindowCommands>
-        <mah:WindowCommands>
-            <Button  Content="Deploy CupCakes">
-                <Button.ContentTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <iconPacks:PackIconModern Width="22"
-                                        Height="22"
-                                        VerticalAlignment="Center"
-                                        Kind="FoodCupcake" />
-                            <TextBlock Margin="4 0 0 0"
-                         VerticalAlignment="Center"
-                         Text="{Binding}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </Button.ContentTemplate>
-            </Button>
-        </mah:WindowCommands>
-    </mah:MetroWindow.RightWindowCommands>
+        Title="MKVtoMP4" Width="454.195" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="566.711" Loaded="MetroWindow_Loaded">
 
     <Border Padding="10">
         <StackPanel>
@@ -50,7 +19,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="sourceDirectory" IsReadOnly="True"/>
-                <Button Grid.Column="1" Content="Browse.." Margin="10,0,0,0" />
+                <Button Grid.Column="1" Click="BrowseSource" Content="Browse.." Margin="10,0,0,0" />
 
             </Grid>
 
@@ -63,7 +32,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="destDirectory" IsReadOnly="True"/>
-                <Button Grid.Column="1" Content="Browse.." Margin="10,0,0,0" />
+                <Button Grid.Column="1" Click="BrowseDesti" Content="Browse.." Margin="10,0,0,0" />
 
             </Grid>
 
